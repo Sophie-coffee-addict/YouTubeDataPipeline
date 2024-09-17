@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+*.venv
+venv/
+ENV/
+env/
+*.env
+.Python
+*.sqlite3
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Environment files
+*.env
+.env
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Virtualenv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Pytest
+.cache/
