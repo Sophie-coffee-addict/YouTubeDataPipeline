@@ -4,6 +4,7 @@ A Python-based ETL pipeline that uses the YouTube Data API to extract and save v
 ### Project Background
 Maggie has been a YouTuber that I knew for many years and her videos have helped me so much to get to the almost native level of oral English. Recently, I've been diving into Python, had a good, fun reading of Head First Python, and thought I'd play around with Python and real-life data. Turns out, it feels so much fun and great to generate insights from data for future improvement. 
 Next up, I'll email the insights generated to Maggie and hopefully it would be helpful to her : )
+This project is also inspired by my friend Meiqiao : )
 For a view of the full report, click here:
 https://github.com/user-attachments/files/17023495/Actionable.Insights.for.Future.YouTube.Videos.pdf
 
