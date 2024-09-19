@@ -17,9 +17,32 @@ https://github.com/user-attachments/files/17023495/Actionable.Insights.for.Futur
 5. **Automation**: Automated the process of saving YouTube comments and sentiment scores to CSV files for further analysis.
 
 
-### Value Created:
+### Value Created
 - **Audience Insights**: Generated insights into audience sentiment by analyzing YouTube comments, providing creators with actionable feedback.
 - **Sentiment Tracking**: Enabled continuous tracking of comment sentiment, helping creators understand how their audience reacts to specific content.
 - **Efficient Feedback Pipeline**: Automated the extraction and analysis of user comments, allowing for faster feedback loops and potential content improvement.
 
   
+### How to Use it
+**Prerequisites**
+- **Python 3.x**
+- **YouTube Data API key**
+
+
+### How to Get a YouTube Data API Key
+1. Go to the **Google Cloud Console**: https://console.cloud.google.com/  
+3. Click on **Select Project** > **NEW PROJECT**
+   <img width="394" alt="image" src="https://github.com/user-attachments/assets/8d565ef2-80fa-45ae-b811-87ee517a80b3">  
+   <img width="763" alt="image" src="https://github.com/user-attachments/assets/2ccf81be-afee-4dda-b35e-cbac75b1e5c3">  
+4. Name your project, and click **CREATE**.
+   <img width="570" alt="image" src="https://github.com/user-attachments/assets/da291616-b2e1-490a-bb2f-a23881ab76bf">  
+5. Once the project is created, navigate to the API & Services section.
+   <img width="477" alt="image" src="https://github.com/user-attachments/assets/fc328ccf-d647-4fd4-83a0-73f1d13dd855">  
+6. Enable the YouTube Data API v3 by searching for it under Library.
+   <img width="432" alt="image" src="https://github.com/user-attachments/assets/f696e465-fe8b-49b8-b952-405b1364eea8">
+   <img width="810" alt="image" src="https://github.com/user-attachments/assets/fc219168-7a06-4297-a7f0-89f298773c5a">
+7. Go to **Credentials** and click **CREATE CREDENTIALS** -> **API Key**.
+    <img width="967" alt="image" src="https://github.com/user-attachments/assets/5919721a-38fd-4273-9120-97218adc6fa7">  
+8. Copy your API key and store it securely (you will need it in the **.env** file).
+
+
