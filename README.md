@@ -50,38 +50,41 @@ https://github.com/user-attachments/files/17023495/Actionable.Insights.for.Futur
 Install the following dependencies using pip:<br>
 ```bash
 pip3 install pandas nltk matplotlib seaborn google-api-python-client python-dotenv
-
+```
 
 ### Setup
 1. **Clone the repository**
 ```bash
 git clone https://github.com/Sophie-coffee-addict/youtube_data_pipeline.git
 cd youtube_data_pipeline
+```
 
 2. **Set up the environment variables**
 Create a .env file in the root directory of your project and add your YouTube Data API key :<br>
 ```bash
 API_KEY=your_youtube_data_api_key
+```
 
 3. Download NLTK Data
 Make sure to download the required NLTK data (VADER lexicon) for sentiment analysis by running:
 ```bash
 python3 -m nltk.downloader vader_lexicon
-
+```
 
 ### How to Run the Pipeline
 1. **Run the Pipeline**
 You can run the pipeline using the following command:
 ```bash
 python3 yt_comments.py
+```
 
 The video ID can be set within the main() function of the yt_comments.py file:
 ```bash
 if __name__ == "__main__":
     video_id = 'your_video_ID'  # the bit after "=" in the video link
     main(video_id)
-
-<img width="286" alt="image" src="https://github.com/user-attachments/assets/9a9948b3-9467-437e-9ea2-c5ca9c426a3d">
+```
+<br><img width="286" alt="image" src="https://github.com/user-attachments/assets/9a9948b3-9467-437e-9ea2-c5ca9c426a3d">
 
 2. **What Happens Next**
 - Extract Comments: The script will extract all comments from the video.
@@ -96,7 +99,7 @@ Then, I fed the comments and the sentiment score distribution to ChatGPT with th
 
 
 ### Project Structure
-<img width="231" alt="image" src="https://github.com/user-attachments/assets/9aa9c333-9805-44b9-9dae-8a18db08f771">
+<br><img width="231" alt="image" src="https://github.com/user-attachments/assets/9aa9c333-9805-44b9-9dae-8a18db08f771">
 
 
 
