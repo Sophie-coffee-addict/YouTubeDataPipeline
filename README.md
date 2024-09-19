@@ -31,12 +31,12 @@ https://github.com/user-attachments/files/17023495/Actionable.Insights.for.Futur
 
 ### How to Get a YouTube Data API Key
 1. Go to the **Google Cloud Console**: https://console.cloud.google.com/  
-3. Click on **Select Project** > **NEW PROJECT**
+3. Click on **Select Project** > **NEW PROJECT**.
    <br><img width="394" alt="image" src="https://github.com/user-attachments/assets/8d565ef2-80fa-45ae-b811-87ee517a80b3">  
    <br><img width="763" alt="image" src="https://github.com/user-attachments/assets/2ccf81be-afee-4dda-b35e-cbac75b1e5c3">  
 4. Name your project, and click **CREATE**.
    <br><img width="570" alt="image" src="https://github.com/user-attachments/assets/da291616-b2e1-490a-bb2f-a23881ab76bf">  
-5. Once the project is created, navigate to the API & Services section.
+5. Once the project is created, navigate to the API & services section.
    <br><img width="477" alt="image" src="https://github.com/user-attachments/assets/fc328ccf-d647-4fd4-83a0-73f1d13dd855">  
 6. Enable the YouTube Data API v3 by searching for it under Library.
    <br><img width="432" alt="image" src="https://github.com/user-attachments/assets/f696e465-fe8b-49b8-b952-405b1364eea8">
@@ -44,5 +44,65 @@ https://github.com/user-attachments/files/17023495/Actionable.Insights.for.Futur
 7. Go to **Credentials** and click **CREATE CREDENTIALS** -> **API Key**.
    <br><img width="967" alt="image" src="https://github.com/user-attachments/assets/5919721a-38fd-4273-9120-97218adc6fa7">  
 8. Copy your API key and store it securely (you will need it in the **.env** file).
+
+
+### Dependencies
+Install the following dependencies using pip:<br>
+```bash
+pip3 install pandas nltk matplotlib seaborn google-api-python-client python-dotenv
+
+
+### Setup
+1. **Clone the repository**
+```bash
+git clone https://github.com/Sophie-coffee-addict/youtube_data_pipeline.git
+cd youtube_data_pipeline
+
+2. **Set up the environment variables**
+Create a .env file in the root directory of your project and add your YouTube Data API key :<br>
+```bash
+API_KEY=your_youtube_data_api_key
+
+3. Download NLTK Data
+Make sure to download the required NLTK data (VADER lexicon) for sentiment analysis by running:
+```bash
+python3 -m nltk.downloader vader_lexicon
+
+
+### How to Run the Pipeline
+1. **Run the Pipeline**
+You can run the pipeline using the following command:
+```bash
+python3 yt_comments.py
+
+The video ID can be set within the main() function of the yt_comments.py file:
+```bash
+if __name__ == "__main__":
+    video_id = 'your_video_ID'  # the bit after "=" in the video link
+    main(video_id)
+
+<img width="286" alt="image" src="https://github.com/user-attachments/assets/9a9948b3-9467-437e-9ea2-c5ca9c426a3d">
+
+2. **What Happens Next**
+- Extract Comments: The script will extract all comments from the video.
+- Sentiment Analysis: It performs sentiment analysis on the comments.
+- A CSV file (comments_<video_id>_<date>.csv) containing the comments and sentiment scores.
+<br><img width="711" alt="image" src="https://github.com/user-attachments/assets/64db7ea1-86e0-4ca0-9dc7-62fa4b26084d">
+- A PNG image (sentiment.png) of the sentiment score distribution.
+<br><img width="862" alt="image" src="https://github.com/user-attachments/assets/32ea1524-3c9d-48aa-904b-d711984ce6da">
+Then, I fed the comments and the sentiment score distribution to ChatGPT with the following prompts for insight analysis:
+<br>"Based on the following YouTube comments, generate an insights report. Focus on key trends, common themes, suggestions for future content, and areas where improvements can be made."
+<br>"Based on the following sentiment score distribution, analyse the data and provide insights. Focus on overall trends, any noticeable patterns, and suggestions for interpreting the data."
+
+
+### Project Structure
+<img width="231" alt="image" src="https://github.com/user-attachments/assets/9aa9c333-9805-44b9-9dae-8a18db08f771">
+
+
+
+
+
+
+
 
 
