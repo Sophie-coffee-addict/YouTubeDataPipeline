@@ -16,13 +16,13 @@ https://github.com/user-attachments/files/17023495/Actionable.Insights.for.Futur
 ### Key Learnings from This Project
 1. **API Integration**: Gained hands-on experience extracting data from YouTube's API, handling pagination, and managing API responses.
 2. **Sentiment Analysis**: Used NLTK's Vader lexicon to perform sentiment analysis on YouTube comments, identifying trends in audience sentiment.
-3. **Data Visualization**: Created visual representations of sentiment distribution using `matplotlib` and `seaborn`, making insights more accessible.
+3. **Data Visualisation**: Created visual representations of sentiment distribution using `matplotlib` and `seaborn`, making insights more accessible.
 4. **Debugging and Problem-Solving**: Resolved key issues like missing data fields (`snippet` errors) and SSL certificate verification errors during API interactions.
 5. **Automation**: Automated the process of saving YouTube comments and sentiment scores to CSV files for further analysis.
 
 
 ### Value Created
-- **Audience Insights**: Generated insights into audience sentiment by analyzing YouTube comments, providing creators with actionable feedback.
+- **Audience Insights**: Generated insights into audience sentiment by analysing YouTube comments, providing creators with actionable feedback.
 - **Sentiment Tracking**: Enabled continuous tracking of comment sentiment, helping creators understand how their audience reacts to specific content.
 - **Efficient Feedback Pipeline**: Automated the extraction and analysis of user comments, allowing for faster feedback loops and potential content improvement.
 
