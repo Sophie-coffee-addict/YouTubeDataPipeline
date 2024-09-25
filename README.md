@@ -35,18 +35,18 @@ https://github.com/user-attachments/files/17023495/Actionable.Insights.for.Futur
 
 ### How to Get a YouTube Data API Key
 1. Go to the **Google Cloud Console**: https://console.cloud.google.com/  
-3. Click on **Select Project** > **NEW PROJECT**.
-   <br><img width="394" alt="image" src="https://github.com/user-attachments/assets/8d565ef2-80fa-45ae-b811-87ee517a80b3">  
-   <br><img width="763" alt="image" src="https://github.com/user-attachments/assets/2ccf81be-afee-4dda-b35e-cbac75b1e5c3">  
+3. Click on **Select a project** > **NEW PROJECT**.
+   <br><img width="394" alt="image" src="https://github.com/user-attachments/assets/8d565ef2-80fa-45ae-b811-87ee517a80b3">  <br>
+   <br><img width="763" alt="image" src="https://github.com/user-attachments/assets/2ccf81be-afee-4dda-b35e-cbac75b1e5c3">  <br>  
 4. Name your project, and click **CREATE**.
-   <br><img width="570" alt="image" src="https://github.com/user-attachments/assets/da291616-b2e1-490a-bb2f-a23881ab76bf">  
+   <br><img width="570" alt="image" src="https://github.com/user-attachments/assets/da291616-b2e1-490a-bb2f-a23881ab76bf">  <br>
 5. Once the project is created, navigate to the API & services section.
-   <br><img width="477" alt="image" src="https://github.com/user-attachments/assets/fc328ccf-d647-4fd4-83a0-73f1d13dd855">  
+   <br><img width="477" alt="image" src="https://github.com/user-attachments/assets/fc328ccf-d647-4fd4-83a0-73f1d13dd855">  <br>
 6. Enable the YouTube Data API v3 by searching for it under Library.
-   <br><img width="432" alt="image" src="https://github.com/user-attachments/assets/f696e465-fe8b-49b8-b952-405b1364eea8">
-   <br><img width="810" alt="image" src="https://github.com/user-attachments/assets/fc219168-7a06-4297-a7f0-89f298773c5a">
+   <br><img width="432" alt="image" src="https://github.com/user-attachments/assets/f696e465-fe8b-49b8-b952-405b1364eea8">  <br>
+   <br><img width="810" alt="image" src="https://github.com/user-attachments/assets/fc219168-7a06-4297-a7f0-89f298773c5a">  <br>
 7. Go to **Credentials** and click **CREATE CREDENTIALS** -> **API Key**.
-   <br><img width="967" alt="image" src="https://github.com/user-attachments/assets/5919721a-38fd-4273-9120-97218adc6fa7">  
+   <br><img width="967" alt="image" src="https://github.com/user-attachments/assets/5919721a-38fd-4273-9120-97218adc6fa7">  <br>
 8. Copy your API key and store it securely (you will need it in the **.env** file).
 
 
