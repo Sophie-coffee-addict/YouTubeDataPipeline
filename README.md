@@ -6,11 +6,11 @@ Maggie has been a YouTuber that I knew for many years and her videos have helped
 <br>Next up, I'll email the insights generated to Maggie and hopefully it would be helpful to her : )
 <br>This project is also inspired by my friend Meiqiao : )
 
-### A Quick Peak of the Insights Report
+### A Quick Peak of the Insights Report <br>
 <br><img width="730" alt="image" src="https://github.com/user-attachments/assets/a73fcb8f-2bb0-4462-bf6c-53f7dc505cf2">
 
-<br>For a view of the full report, click here:
-https://github.com/user-attachments/files/17023495/Actionable.Insights.for.Future.YouTube.Videos.pdf
+<br>For a view of the full report, click here: <br>
+https://github.com/user-attachments/files/17217640/Actionable.Insights.for.Future.YouTube.Videos.pdf
 
 
 ### Key Learnings from This Project
