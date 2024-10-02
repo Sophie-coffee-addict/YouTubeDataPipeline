@@ -6,7 +6,7 @@ Maggie has been a YouTuber that I knew for many years and her videos have helped
 <br>I have emailed the insights generated to Maggie and hopefully it would be helpful to her : )
 <br>This project is also inspired by my friend Meiqiao : )
 
-### A Quick Peak of the Insights Report <br>
+### A Quick Peek of the Insights Report <br>
 <br><img width="772" alt="image" src="https://github.com/user-attachments/assets/5cf612d8-2f1f-4707-9e8b-76664fd1e522">
 
 <br>For a view of the full report, click here: <br>
@@ -54,8 +54,10 @@ https://github.com/user-attachments/files/17220116/insights_report.pdf
 1. Visit openai.com
 2. Click **Products** > **API login**.
    <br><img width="565" alt="image" src="https://github.com/user-attachments/assets/c22e68da-b72e-4dd1-9e9a-229f2615954e">  <br>
-4. On the left pane, click **API keys** > **Create new secret key**.
+3. On the left pane, click **API keys** > **Create new secret key**.
    <br><img width="1253" alt="image" src="https://github.com/user-attachments/assets/edc6fc21-6780-4f6d-9f79-3cd7625200c1">  <br>
+   
+Note: If you don't want the comments and sentiment analysis process to be automated, you can feed them into AI with your customised prompts.   <br>
 
 ### Dependencies
 Install the following dependencies using pip:<br>
