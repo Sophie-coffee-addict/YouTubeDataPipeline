@@ -7,10 +7,10 @@ Maggie has been a YouTuber that I knew for many years and her videos have helped
 <br>This project is also inspired by my friend Meiqiao : )
 
 ### A Quick Peak of the Insights Report <br>
-<br><img width="561" alt="image" src="https://github.com/user-attachments/assets/0c696cda-15d5-40c2-9f16-a3f5dcc380f2">
+<br><img width="772" alt="image" src="https://github.com/user-attachments/assets/5cf612d8-2f1f-4707-9e8b-76664fd1e522">
 
 <br>For a view of the full report, click here: <br>
-https://github.com/user-attachments/files/17219854/Actionable.Insights.for.Future.YouTube.Videos.pdf
+https://github.com/user-attachments/files/17220116/insights_report.pdf
 
 
 ### Key Learnings from This Project
@@ -108,7 +108,7 @@ if __name__ == "__main__":
 - Extract Comments: The script will extract all comments from the video.
 - Sentiment Analysis: It performs sentiment analysis on the comments.
 - A CSV file (comments_<video_id>_<date>.csv) containing the comments and sentiment scores.
-<br><img width="711" alt="image" src="https://github.com/user-attachments/assets/64db7ea1-86e0-4ca0-9dc7-62fa4b26084d">
+<br><img width="561" alt="image" src="https://github.com/user-attachments/assets/0c696cda-15d5-40c2-9f16-a3f5dcc380f2">
 - A PNG image (sentiment.png) of the sentiment score distribution.
 <br><img width="872" alt="image" src="https://github.com/user-attachments/assets/67063dcb-5c3a-4865-ba1f-dc347b99d214">
 - The comments and sentiment score distribution are fed to ChatGPT with the preset prompts to generate an insights report.
