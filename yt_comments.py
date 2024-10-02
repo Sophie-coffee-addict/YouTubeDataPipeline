@@ -182,7 +182,7 @@ def generate_sentiment_insights(sentiments):
         return "Failed to generate sentiment insights."
 
 # Function to save the report to a PDF
-def save_report_to_pdf(comment_insights, sentiment_insights, filename="Actionable Insights for Future YouTube Videos.pdf"):
+def save_report_to_pdf(comment_insights, sentiment_insights, filename="insights_report.pdf"):
     print("Inside save_report_to_pdf function...")  # Debug: Check if the function is called
     pdf = FPDF()
     pdf.set_auto_page_break(auto=True, margin=15)
@@ -253,7 +253,7 @@ def main(video_id):
 
         # Save all insights to a PDF report
         save_report_to_pdf(comment_insights, sentiment_insights)
-        print("Insights report generated and saved as 'Actionable Insights for Future YouTube Videos.pdf'")
+        print("Insights report generated and saved as 'insights_report.pdf'")
         
     else:
         print(f"No comments found for video {video_id}")
