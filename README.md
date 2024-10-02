@@ -57,7 +57,7 @@ https://github.com/user-attachments/files/17220116/insights_report.pdf
 3. On the left pane, click **API keys** > **Create new secret key**.
    <br><img width="1253" alt="image" src="https://github.com/user-attachments/assets/edc6fc21-6780-4f6d-9f79-3cd7625200c1">  <br>
    
-Note: If you don't want the comments and sentiment analysis process to be automated, you can feed them into AI with your customised prompts.   <br>
+Note: If you don't want the comments and sentiment analysis process to be automated, you can manually feed them into AI with your customised prompts.   <br>
 
 ### Dependencies
 Install the following dependencies using pip:<br>
