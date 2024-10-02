@@ -18,7 +18,7 @@ https://github.com/user-attachments/files/17220116/insights_report.pdf
 2. **Sentiment Analysis**: Used NLTK's Vader lexicon (for English) and SnowNLP (for Chinese) to perform sentiment analysis on YouTube comments, identifying trends in audience sentiment.
 3. **Data Visualisation**: Created visual representations of sentiment distribution using `matplotlib` and `seaborn`, making insights more accessible.
 4. **Debugging and Problem-Solving**: Resolved key issues like missing data fields (`snippet` errors); SSL certificate verification errors during API interactions; plt.show() blocking the script running...
-5. **Automation**: Automated the process of saving YouTube comments and sentiment scores to CSV files; automated the process of analysing comments and the sentiment score distribution with proper prompts with ChatGPT; automated the process of saving the insights report into a PDF file.
+5. **Automation**: Automated the entire process: saving YouTube comments and sentiment scores to a CSV file, generating insights using ChatGPT, and saving the insights report into a PDF file.
 
 
 ### Value Created
