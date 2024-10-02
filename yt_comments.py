@@ -1,7 +1,7 @@
 import os  # Import the os module to access environment variables and interact with the operating system
 import openai  # Import the OpenAI library to interact with the GPT-3 API
 import pandas as pd  # Import pandas for data manipulation and saving the data as CSV
-from fpdf import FPDF
+from fpdf import FPDF # Import FPDF for generating the PDF report
 from datetime import datetime as dt  # Import datetime to handle date formatting
 from dotenv import load_dotenv  # Import load_dotenv to load environment variables from a .env file
 from googleapiclient.discovery import build  # Import the YouTube API client
@@ -29,15 +29,17 @@ youtube = build(api_service_name, api_version, developerKey=YOUTUBE_VIDEO_API_KE
 # Get the current date, formatted as 'YYYY-MM-DD' for the output CSV file
 today = dt.today().strftime('%Y-%m-%d')
 
-# Initialize the NLTK Sentiment Analyzer
+# Initialise the NLTK Sentiment Analyzer
 sia = SentimentIntensityAnalyzer()
 
-# Initialize OpenAI API key
+# Initialise OpenAI API key
 openai.api_key = OPENAI_API_KEY
+print(f"Loaded OpenAI API Key: {OPENAI_API_KEY}")
+
 
 # Function to retrieve comments for a specific video ID
 def get_comments(video_id):
-    comments_list = []  # Initialize an empty list to store the comments
+    comments_list = []  # Initialise an empty list to store the comments
     
     # First API request to get the top-level comment threads for the video
     request = youtube.commentThreads().list(
@@ -89,14 +91,14 @@ def analyse_sentiments(comments_list):
     # Perform sentiment analysis on each comment's text
     for comment in comments_list:
         # Debug: Print the entire comment to see its structure
-        print("Comment Data:", comment)
+        #print("Comment Data:", comment)
 
         # Check for 'text' field (instead of 'snippet')
         comment_text = comment.get('text')
         if comment_text:
             # Clean the comment text
             comment_text = clean_text(comment_text)
-            print(f"Analysing Comment: {comment_text}")  # Debug: Print the comment text being analysed
+            #print(f"Analysing Comment: {comment_text}")  # Debug: Print the comment text being analysed
             
             if is_chinese(comment_text):  
                 # If the text is in Chinese, use SnowNLP for sentiment analysis
@@ -110,7 +112,7 @@ def analyse_sentiments(comments_list):
         else:
             print("Warning: Missing 'text' in comment data.")  # Debug: Warn if text is missing
     
-    print("Sentiments:", sentiments)
+    #print("Sentiments:", sentiments)
     
     return comments_list, sentiments
 
@@ -125,7 +127,7 @@ def visualise_sentiments(sentiments):
     plt.title('Sentiment Score Distribution')
     plt.xlabel('Sentiment Score')
     plt.savefig('sentiment.png')
-    plt.show()
+    #plt.show() -- this really blocks the script, so it's better to save the plot to a file
     print(f"Sentiment score distribution saved to 'sentiment.png'")
 
 # Function to generate insights from the comments
@@ -137,14 +139,22 @@ def generate_insights_report(comments):
         f"Comments: {comments}"
     )
     
-    response = openai.Completion.create(
-        engine="text-davinci-003",
-        prompt=prompt,
-        max_tokens=1500,
-        temperature=0.7
-    )
-    report = response.choices[0].text.strip()
-    return report
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo", 
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": prompt}
+            ],
+            max_tokens=1500,
+            temperature=0.7
+        )
+        report = response.choices[0].message['content'].strip()
+        print("OpenAI API call succeeded.")
+        return report
+    except Exception as e:
+        print(f"Error during OpenAI API call: {e}")
+        return "Failed to generate insights."
 
 # Function to generate insights from the sentiment score distribution
 def generate_sentiment_insights(sentiments):
@@ -153,18 +163,27 @@ def generate_sentiment_insights(sentiments):
         "Focus on overall trends, any noticeable patterns, and suggestions for interpreting the data.\n\n"
         f"Sentiment Scores: {sentiments}"
     )
-    
-    response = openai.Completion.create(
-        engine="text-davinci-003",
-        prompt=prompt,
-        max_tokens=1000,
-        temperature=0.7
-    )
-    insights = response.choices[0].text.strip()
-    return insights
+
+    try:
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo", 
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": prompt}
+            ],
+            max_tokens=1000,
+            temperature=0.7
+        )
+        insights = response.choices[0].message['content'].strip()
+        print("OpenAI API call succeeded for sentiment insights.")
+        return insights
+    except Exception as e:
+        print(f"Error during OpenAI API call for sentiment insights: {e}")
+        return "Failed to generate sentiment insights."
 
 # Function to save the report to a PDF
 def save_report_to_pdf(comment_insights, sentiment_insights, filename="insights_report.pdf"):
+    print("Inside save_report_to_pdf function...")  # Debug: Check if the function is called
     pdf = FPDF()
     pdf.set_auto_page_break(auto=True, margin=15)
     pdf.add_page()
@@ -195,6 +214,7 @@ def save_report_to_pdf(comment_insights, sentiment_insights, filename="insights_
     
     # Save PDF
     pdf.output(filename)
+    print(f"PDF report generated and saved as {filename}")
 
 # Save comments and their sentiment scores to a CSV file
 def save_comments_to_csv(comments_list, video_id):
@@ -218,17 +238,19 @@ def main(video_id):
         # Save comments along with sentiment scores to a CSV file
         save_comments_to_csv(analysed_comments, video_id)
 
-        # Visualize sentiment distribution
+        # Visualise sentiment distribution
         print("Visualising sentiments...")
         visualise_sentiments(sentiments)
 
         # Generate insights for the comments
         comments_text = " ".join([comment['text'] for comment in analysed_comments])
         comment_insights = generate_insights_report(comments_text)
-        
+        print(f"Comment Insights: {comment_insights}")  # debug: print the generated comment insights
+
         # Generate insights for sentiment score distribution
         sentiment_insights = generate_sentiment_insights(sentiments)
-        
+        print(f"Sentiment Insights: {sentiment_insights}")  # debug: print the generated sentiment insights
+
         # Save all insights to a PDF report
         save_report_to_pdf(comment_insights, sentiment_insights)
         print("Insights report generated and saved as 'insights_report.pdf'")
